@@ -1,0 +1,12 @@
+User-agent: *
+Disallow: /
+
+# Block specific archivers
+User-agent: ia_archiver
+Disallow: /
+
+User-agent: archive.org_bot
+Disallow: /
+
+User-agent: Wayback
+Disallow: /
