@@ -4,126 +4,154 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MRL Pulse — Live Test Availability</title>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600;700&family=IBM+Plex+Mono&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-deep: #060B1C; --bg-base: #0A1224; --bg-elev: #101A35;
-            --teal: #3DD9D6; --available: #39FF7F; --unavailable: #FF4D6D;
-            --text: #E8F1FF; --text-muted: #8898B8;
+            --bg-deep: #060B1C; --bg-base: #0A1224; --bg-elev-1: #101A35; --bg-elev-2: #16213F;
+            --teal: #3DD9D6; --teal-glow: rgba(61, 217, 214, 0.35);
+            --available: #39FF7F; --available-glow: rgba(57, 255, 127, 0.5);
+            --unavailable: #FF4D6D; --text: #E8F1FF; --text-muted: #8898B8;
+            --radius-lg: 18px; --radius-xl: 24px;
         }
+
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body { 
-            background: var(--bg-base); color: var(--text); 
-            font-family: 'IBM Plex Sans', sans-serif;
-            background-image: radial-gradient(circle at top, rgba(61, 217, 214, 0.05), transparent);
-            min-height: 100vh; padding-bottom: 50px;
+            background: var(--bg-base); color: var(--text); font-family: 'IBM Plex Sans', sans-serif;
+            background-image: radial-gradient(ellipse at 50% -200px, rgba(61, 217, 214, 0.08), transparent 60%);
+            overflow-x: hidden; line-height: 1.5;
         }
-        header { 
-            padding: 20px 40px; display: flex; justify-content: space-between; align-items: center;
-            border-bottom: 1px solid rgba(255,255,255,0.05); backdrop-filter: blur(10px);
-            position: sticky; top: 0; z-index: 100; background: rgba(10, 18, 36, 0.8);
+
+        /* Header Style - Original Glassmorphism */
+        .site-header { 
+            position: sticky; top: 0; z-index: 100; backdrop-filter: blur(20px); 
+            background: rgba(10, 18, 36, 0.78); border-bottom: 1px solid rgba(255,255,255,0.06); 
         }
+        .header-inner { max-width: 1400px; margin: 0 auto; padding: 18px 32px; display: flex; justify-content: space-between; align-items: center; }
         .logo { height: 50px; }
-        .hero { padding: 60px 40px; max-width: 1200px; margin: 0 auto; text-align: center; }
-        h1 { font-size: 48px; margin-bottom: 15px; }
-        .status-bar { 
-            background: var(--bg-elev); padding: 15px 30px; border-radius: 50px;
-            display: inline-flex; gap: 20px; font-family: 'IBM Plex Mono', monospace; font-size: 14px;
-            border: 1px solid rgba(255,255,255,0.1); margin-top: 20px;
+
+        /* Hero & Stats - Original Layout */
+        .hero { max-width: 1400px; margin: 0 auto; padding: 60px 32px; display: grid; grid-template-columns: 1.2fr 1fr; gap: 60px; align-items: center; }
+        .counter-card { 
+            background: var(--bg-elev-1); border-radius: var(--radius-xl); padding: 40px; 
+            border: 1px solid rgba(255,255,255,0.12); position: relative; overflow: hidden;
         }
-        .search-container { max-width: 800px; margin: 0 auto 40px; padding: 0 20px; }
-        #search { 
-            width: 100%; padding: 20px 30px; border-radius: 15px; border: 1px solid rgba(255,255,255,0.1);
-            background: var(--bg-elev); color: white; font-size: 18px; outline: none; transition: 0.3s;
+        .counter-card::before { content: ''; position: absolute; top: 0; right: 0; width: 150px; height: 150px; background: var(--teal); filter: blur(100px); opacity: 0.1; }
+
+        /* Search - Original Design */
+        .controls { max-width: 1400px; margin: 0 auto; padding: 0 32px; }
+        .search-box { 
+            width: 100%; padding: 24px 32px; background: var(--bg-elev-1); border-radius: var(--radius-lg);
+            border: 1px solid rgba(255,255,255,0.1); color: white; font-size: 18px; outline: none; transition: 0.4s;
         }
-        #search:focus { border-color: var(--teal); box-shadow: 0 0 15px rgba(61, 217, 214, 0.2); }
-        .grid { 
-            display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); 
-            gap: 20px; max-width: 1200px; margin: 0 auto; padding: 0 20px;
+        .search-box:focus { border-color: var(--teal); box-shadow: 0 0 30px rgba(61, 217, 214, 0.15); }
+
+        /* Cards Grid - Original Beauty */
+        .content { max-width: 1400px; margin: 40px auto; padding: 0 32px; display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 24px; }
+        .test-card { 
+            background: var(--bg-elev-1); border-radius: var(--radius-lg); padding: 28px; 
+            border: 1px solid rgba(255,255,255,0.08); transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative; cursor: pointer;
         }
-        .card { 
-            background: var(--bg-elev); padding: 25px; border-radius: 20px; 
-            border: 1px solid rgba(255,255,255,0.05); transition: 0.3s; position: relative; overflow: hidden;
-        }
-        .card:hover { transform: translateY(-5px); border-color: rgba(61, 217, 214, 0.3); }
-        .status-dot { width: 10px; height: 10px; border-radius: 50%; position: absolute; top: 25px; right: 25px; }
-        .Available { background: var(--available); box-shadow: 0 0 10px var(--available); }
-        .Unavailable { background: var(--unavailable); }
-        .dept-tag { 
-            font-size: 10px; text-transform: uppercase; letter-spacing: 1px; color: var(--teal);
-            margin-bottom: 8px; display: block;
-        }
-        .test-name { font-size: 18px; font-weight: 700; margin-bottom: 15px; padding-right: 20px; }
-        .meta { font-size: 13px; color: var(--text-muted); display: grid; gap: 8px; }
-        .meta-item { display: flex; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,0.03); padding-bottom: 5px; }
+        .test-card:hover { transform: translateY(-8px); border-color: rgba(61, 217, 214, 0.4); background: var(--bg-elev-2); }
+        
+        .status-indicator { position: absolute; top: 28px; right: 28px; width: 10px; height: 10px; border-radius: 50%; }
+        .Available { background: var(--available); box-shadow: 0 0 15px var(--available-glow); }
+        .Unavailable { background: var(--unavailable); opacity: 0.5; }
+
+        .dept-label { font-size: 11px; font-weight: 600; text-transform: uppercase; color: var(--teal); letter-spacing: 1.5px; margin-bottom: 12px; display: block; }
+        .test-title { font-size: 20px; font-weight: 700; margin-bottom: 20px; color: #fff; line-height: 1.3; padding-right: 25px; }
+        
+        .meta-row { display: flex; justify-content: space-between; padding: 10px 0; border-top: 1px solid rgba(255,255,255,0.05); font-size: 13px; }
+        .meta-label { color: var(--text-muted); }
+        .meta-value { font-weight: 500; font-family: 'IBM Plex Mono', monospace; color: var(--text); }
     </style>
 </head>
 <body>
-    <header>
+
+<header class="site-header">
+    <div class="header-inner">
         <img src="assets/logos/cluster.png" alt="Cluster" class="logo">
-        <div style="text-align:center"><b style="font-size:20px; display:block">MRL Pulse</b><small style="color:var(--text-muted); font-size:10px">REGIONAL LABORATORY MADINAH</small></div>
+        <div style="text-align:center"><b style="font-size:22px; letter-spacing:1px;">MRL PULSE</b></div>
         <img src="assets/logos/mrl.png" alt="MRL" class="logo">
-    </header>
+    </div>
+</header>
 
-    <div class="hero">
-        <h1>Real-time <span style="color:var(--teal)">Availability.</span></h1>
-        <div class="status-bar">
-            <span>TOTAL TESTS: <b id="total-val">0</b></span>
-            <span>AVAILABLE: <b id="avail-val" style="color:var(--available)">0</b></span>
+<main>
+    <section class="hero">
+        <div>
+            <h1 style="font-size: 56px; font-weight: 800; line-height: 1.1;">Live Access to <br><span style="color:var(--teal)">Clinical Excellence.</span></h1>
+            <p style="margin-top:24px; color:var(--text-muted); font-size:18px;">Madinah Regional Laboratory test availability, updated in real-time via clinical protocols.</p>
         </div>
-    </div>
+        <div class="counter-card">
+            <div style="font-family:'IBM Plex Mono'; font-size:12px; color:var(--text-muted); margin-bottom:8px;">TOTAL OPERATIONAL TESTS</div>
+            <div style="font-size:72px; font-weight:700;"><span id="availCount" style="color:var(--available);">0</span><span style="color:rgba(255,255,255,0.2); font-size:32px;"> / <span id="totalCount">0</span></span></div>
+            <div id="lastUpdate" style="font-size:11px; color:var(--text-muted); margin-top:15px; font-family:'IBM Plex Mono';">Syncing with Google Sheets...</div>
+        </div>
+    </section>
 
-    <div class="search-container">
-        <input type="text" id="search" placeholder="Search by test name or department...">
-    </div>
+    <section class="controls">
+        <input type="text" id="searchInput" class="search-box" placeholder="Search by test name or department...">
+    </section>
 
-    <div class="grid" id="test-grid"></div>
+    <section class="content" id="testGrid"></section>
+</main>
 
-    <script>
-        const CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQ2RJ4WkKRdv-0yoDWyQwa_9ic8L2v4JNh7EQ43djTBYCRAicBFopn7xnxCgdObvFwc6_hPLhpNlEGc/pub?gid=1222333647&single=true&output=csv";
+<script>
+    const SHEET_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQ2RJ4WkKRdv-0yoDWyQwa_9ic8L2v4JNh7EQ43djTBYCRAicBFopn7xnxCgdObvFwc6_hPLhpNlEGc/pub?gid=1222333647&single=true&output=csv";
 
-        async function loadTests() {
-            try {
-                const response = await fetch(CSV_URL);
-                const data = await response.text();
-                const rows = data.split('\n').slice(1);
-                const tests = rows.map(row => {
-                    const cols = row.split(/,(?=(?:(?:[^"]*"){2})*[^"]*$)/);
-                    return {
-                        name: cols[0]?.replace(/"/g, '').trim(),
-                        dept: cols[1]?.replace(/"/g, '').trim(),
-                        sample: cols[2]?.replace(/"/g, '').trim(),
-                        tube: cols[3]?.replace(/"/g, '').trim(),
-                        tat: cols[4]?.replace(/"/g, '').trim(),
-                        status: cols[5]?.trim().replace(/"/g, '') || 'Unavailable'
-                    };
-                }).filter(t => t.name);
-                displayTests(tests);
-                document.getElementById('search').addEventListener('input', (e) => {
-                    const term = e.target.value.toLowerCase();
-                    const filtered = tests.filter(t => t.name.toLowerCase().includes(term) || t.dept.toLowerCase().includes(term));
-                    displayTests(filtered);
-                });
-            } catch (error) {
-                console.error(error);
-            }
-        }
+    async function loadData() {
+        try {
+            const response = await fetch(SHEET_URL);
+            const csv = await response.text();
+            const rows = csv.split('\n').slice(1);
+            
+            const tests = rows.map(row => {
+                const cols = row.split(/,(?=(?:(?:[^"]*"){2})*[^"]*$)/);
+                return {
+                    name: cols[0]?.replace(/"/g, '').trim(),
+                    dept: cols[1]?.replace(/"/g, '').trim(),
+                    sample: cols[2]?.replace(/"/g, '').trim(),
+                    tube: cols[3]?.replace(/"/g, '').trim(),
+                    tat: cols[4]?.replace(/"/g, '').trim(),
+                    status: cols[5]?.trim().replace(/"/g, '') || 'Unavailable'
+                };
+            }).filter(t => t.name);
 
-        function displayTests(tests) {
-            const grid = document.getElementById('test-grid');
-            grid.innerHTML = '';
-            let availCount = 0;
-            tests.forEach(t => {
-                if(t.status === 'Available') availCount++;
-                const card = document.createElement('div');
-                card.className = 'card';
-                card.innerHTML = `<div class="status-dot ${t.status}"></div><span class="dept-tag">${t.dept}</span><div class="test-name">${t.name}</div><div class="meta"><div class="meta-item"><span>Sample:</span> <span>${t.sample}</span></div><div class="meta-item"><span>Tube:</span> <span>${t.tube}</span></div><div class="meta-item"><span>TAT:</span> <span>${t.tat}</span></div></div>`;
-                grid.appendChild(card);
-            });
-            document.getElementById('total-val').innerText = tests.length;
-            document.getElementById('avail-val').innerText = availCount;
-        }
-        loadTests();
-    </script>
+            render(tests);
+
+            document.getElementById('searchInput').oninput = (e) => {
+                const term = e.target.value.toLowerCase();
+                render(tests.filter(t => t.name.toLowerCase().includes(term) || t.dept.toLowerCase().includes(term)));
+            };
+        } catch (e) { console.error(e); }
+    }
+
+    function render(data) {
+        const grid = document.getElementById('testGrid');
+        grid.innerHTML = '';
+        let avail = 0;
+
+        data.forEach(t => {
+            if(t.status === 'Available') avail++;
+            const card = document.createElement('div');
+            card.className = 'test-card';
+            card.innerHTML = `
+                <div class="status-indicator ${t.status}"></div>
+                <span class="dept-label">${t.dept}</span>
+                <div class="test-title">${t.name}</div>
+                <div class="meta-row"><span class="meta-label">Sample</span><span class="meta-value">${t.sample}</span></div>
+                <div class="meta-row"><span class="meta-label">Tube Color</span><span class="meta-value">${t.tube}</span></div>
+                <div class="meta-row"><span class="meta-label">TAT</span><span class="meta-value">${t.tat}</span></div>
+            `;
+            grid.appendChild(card);
+        });
+
+        document.getElementById('availCount').innerText = avail;
+        document.getElementById('totalCount').innerText = data.length;
+        document.getElementById('lastUpdate').innerText = "Last Sync: " + new Date().toLocaleTimeString();
+    }
+
+    loadData();
+</script>
 </body>
 </html>
