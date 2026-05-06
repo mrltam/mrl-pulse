@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet" />
+<title>MRL Pulse — Live Test Availability</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  :root{
+    --bg:#0A0E14; --bg2:#10151D; --bg3:#161C26; --bg4:#1D2532; --bg5:#252D3D;
+    --border:#22293A; --border2:#2D3548; --border3:#3D4660;
+    --text:#E8ECF5; --text2:#9EA8BD; --text3:#6B7488; --text4:#4A5267;
+    --available:#3DDC97; --available-bg:rgba(61,220,151,0.10); --available-border:rgba(61,220,151,0.30);
+    --unavailable:#FF6B6B; --unavailable-bg:rgba(255,107,107,0.10); --unavailable-border:rgba(255,107,107,0.30);
+    --accent:#7C7AED; --accent2:#5B5BD6; --accent-bg:rgba(124,122,237,0.10); --accent-border:rgba(124,122,237,0.30);
+    --warn:#FFB84D; --warn-bg:rgba(255,184,77,0.12); --warn-border:rgba(255,184,77,0.30);
+    --grad:linear-gradient(135deg,#3DDC97 0%,#7C7AED 100%);
+    --grad-dim:linear-gradient(135deg,rgba(61,220,151,0.4) 0%,rgba(124,122,237,0.4) 100%);
+    --radius:14px; --radius-sm:8px; --radius-lg:20px;
+    --ease:cubic-bezier(0.4,0,0.2,1); --bounce:cubic-bezier(0.34,1.56,0.64,1);
+  }
+  html,body{background:var(--bg);color:var(--text);font-family:'IBM Plex Sans',system-ui,sans-serif;line-height:1.5;-webkit-font-smoothing:antialiased;min-height:100vh}
+  body{overflow-x:hidden}
+  .mono{font-family:'IBM Plex Mono',monospace}
+  .container{max-width:1280px;margin:0 auto;padding:24px 32px}
+  @media (max-width:720px){.container{padding:16px 20px}}
+  ::selection{background:var(--accent-bg);color:var(--text)}
+
+  /* ATMOSPHERE */
+  body::before{content:'';position:fixed;top:-200px;left:50%;transform:translateX(-50%);width:800px;height:800px;background:radial-gradient(circle,rgba(124,122,237,0.08) 0%,transparent 60%);pointer-events:none;z-index:0}
+  body::after{content:'';position:fixed;bottom:-200px;right:-200px;width:600px;height:600px;background:radial-gradient(circle,rgba(61,220,151,0.06) 0%,transparent 60%);pointer-events:none;z-index:0}
+  .container{position:relative;z-index:1}
+
+  /* HEADER */
+  header{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-top:12px;padding-bottom:48px;flex-wrap:wrap}
+  .logo-wrap{display:flex;align-items:center;gap:18px}
+  .logo-wrap img{width:60px;height:60px;object-fit:contain;display:block;filter:drop-shadow(0 2px 8px rgba(0,0,0,0.3))}
+  .brand{display:flex;flex-direction:column;align-items:center}
+  .brand-title{font-size:24px;font-weight:600;letter-spacing:-0.02em;display:flex;align-items:center;gap:10px}
+  .live-dot{width:9px;height:9px;border-radius:50%;background:var(--available);box-shadow:0 0 10px var(--available);animation:pulse 2s infinite}
+  @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.5;transform:scale(0.85)}}
+  .brand-sub{font-size:11px;color:var(--text3);letter-spacing:0.18em;margin-top:4px;font-family:'IBM Plex Mono',monospace}
+
+  /* HERO */
+  .hero{display:grid;grid-template-columns:1.1fr 1fr;gap:48px;align-items:center;padding:24px 0 64px;animation:fadeInUp 0.6s var(--ease) backwards}
+  @media (max-width:900px){.hero{grid-template-columns:1fr;gap:32px;padding:0 0 40px}}
+  @keyframes fadeInUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+  .hero h1{font-size:54px;font-weight:600;line-height:1.05;letter-spacing:-0.03em;margin-bottom:20px}
+  @media (max-width:720px){.hero h1{font-size:38px}}
+  .hero h1 .accent{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .hero p{color:var(--text2);font-size:16px;max-width:480px;margin-bottom:24px}
+  .meta-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:8px}
+  .meta-pill{display:inline-flex;align-items:center;gap:8px;padding:8px 14px;background:var(--bg3);border:1px solid var(--border);border-radius:100px;font-size:13px;color:var(--text2);font-family:'IBM Plex Mono',monospace}
+  .meta-pill.live{color:var(--available);border-color:var(--available-border);background:var(--available-bg)}
+  .meta-pill.warn{color:var(--warn);border-color:var(--warn-border);background:var(--warn-bg)}
+
+  /* COUNTER CARD */
+  .counter-card{background:linear-gradient(180deg,var(--bg3) 0%,var(--bg2) 100%);border:1px solid var(--border);border-radius:24px;padding:36px 40px;position:relative;overflow:hidden;animation:fadeInUp 0.7s 0.1s var(--ease) backwards}
+  .counter-card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(124,122,237,0.5),transparent)}
+  .counter-card::after{content:'';position:absolute;top:-50%;right:-20%;width:300px;height:300px;background:radial-gradient(circle,rgba(124,122,237,0.10) 0%,transparent 70%);pointer-events:none}
+  .counter-label{font-size:11px;color:var(--text3);letter-spacing:0.18em;font-family:'IBM Plex Mono',monospace;margin-bottom:14px;position:relative}
+  .counter-row{display:flex;align-items:baseline;gap:14px;margin-bottom:20px;position:relative}
+  .counter-num{font-size:84px;font-weight:600;line-height:1;letter-spacing:-0.04em;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;font-family:'IBM Plex Mono',monospace}
+  .counter-total{font-size:36px;color:var(--text3);font-weight:400}
+  .counter-bar{height:6px;background:var(--bg4);border-radius:100px;overflow:hidden;margin-top:8px;position:relative}
+  .counter-bar-fill{height:100%;background:var(--grad);border-radius:100px;transition:width 0.8s var(--ease);box-shadow:0 0 12px rgba(124,122,237,0.4)}
+
+  /* SEARCH */
+  .search-wrap{position:relative;margin-bottom:32px;animation:fadeInUp 0.7s 0.2s var(--ease) backwards}
+  .search{width:100%;background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius);padding:18px 22px 18px 56px;color:var(--text);font-size:16px;font-family:inherit;outline:none;transition:all 0.2s var(--ease)}
+  .search:hover{border-color:var(--border2)}
+  .search:focus{border-color:var(--accent);background:var(--bg4);box-shadow:0 0 0 4px var(--accent-bg)}
+  .search::placeholder{color:var(--text3)}
+  .search-icon{position:absolute;left:20px;top:50%;transform:translateY(-50%);color:var(--text3);pointer-events:none;transition:color 0.2s}
+  .search:focus + .search-icon{color:var(--accent)}
+
+  /* DEPARTMENT CHIPS */
+  .chip-row{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:48px;padding-bottom:8px;animation:fadeInUp 0.7s 0.3s var(--ease) backwards}
+  .chip{display:inline-flex;align-items:center;gap:8px;background:var(--bg3);border:1px solid var(--border);border-radius:100px;padding:9px 18px;cursor:pointer;color:var(--text2);font-size:13px;font-weight:500;transition:all 0.2s var(--ease);font-family:inherit;white-space:nowrap}
+  .chip:hover{border-color:var(--border3);color:var(--text);transform:translateY(-1px)}
+  .chip.active{background:var(--accent-bg);border-color:var(--accent);color:var(--text);box-shadow:0 0 0 1px var(--accent),0 4px 16px rgba(124,122,237,0.2)}
+  .chip-dot{width:6px;height:6px;border-radius:50%;background:var(--text3);transition:background 0.2s}
+  .chip.active .chip-dot{background:var(--accent);box-shadow:0 0 8px var(--accent)}
+  .chip-count{color:var(--text3);font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:600}
+
+  /* DEPT SECTION */
+  .dept{margin-bottom:56px;animation:fadeInUp 0.6s var(--ease) backwards}
+  .dept-header{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:24px;flex-wrap:wrap}
+  .dept-title-wrap{display:flex;align-items:center;gap:14px}
+  .dept-icon{width:36px;height:36px;border-radius:10px;background:var(--accent-bg);border:1px solid var(--accent-border);display:flex;align-items:center;justify-content:center;color:var(--accent);font-weight:600;font-size:14px;font-family:'IBM Plex Mono',monospace}
+  .dept-name{font-size:24px;font-weight:600;letter-spacing:-0.02em}
+  .dept-stats{font-size:13px;color:var(--text3);font-family:'IBM Plex Mono',monospace}
+  .dept-stats .num{color:var(--available);font-weight:600}
+  .dept-stats .num.warn{color:var(--unavailable)}
+
+  /* TEST GRID */
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px}
+  .test{background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius);padding:16px 18px;display:flex;align-items:center;gap:14px;cursor:pointer;transition:all 0.2s var(--ease);position:relative;overflow:hidden}
+  .test::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(124,122,237,0.06) 0%,transparent 50%);opacity:0;transition:opacity 0.2s}
+  .test:hover{border-color:var(--border3);background:var(--bg4);transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,0.3)}
+  .test:hover::before{opacity:1}
+  .test:active{transform:translateY(0)}
+  .test.unavail{opacity:0.5}
+  .test.unavail:hover{opacity:0.85}
+  .test-status{width:10px;height:10px;border-radius:50%;flex-shrink:0;position:relative}
+  .test-status.on{background:var(--available);box-shadow:0 0 8px var(--available)}
+  .test-status.on::after{content:'';position:absolute;inset:-3px;border-radius:50%;border:1px solid var(--available);opacity:0.4;animation:ping 2s infinite}
+  @keyframes ping{0%{transform:scale(1);opacity:0.6}80%,100%{transform:scale(2);opacity:0}}
+  .test-status.off{background:var(--unavailable);opacity:0.7}
+  .test-name{flex:1;font-size:14px;font-weight:500;color:var(--text);line-height:1.3;position:relative}
+  .test.unavail .test-name{text-decoration:line-through;color:var(--text2)}
+
+  /* PANEL */
+  .panel{margin-bottom:14px;background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;transition:opacity 0.2s}
+  .panel.disabled{opacity:0.5}
+  .panel-head{padding:14px 20px;display:flex;align-items:center;gap:12px;background:var(--bg4);border-bottom:1px solid var(--border)}
+  .panel-icon{width:30px;height:30px;border-radius:8px;background:var(--accent-bg);border:1px solid var(--accent-border);display:flex;align-items:center;justify-content:center;color:var(--accent);font-size:13px;font-weight:600;font-family:'IBM Plex Mono',monospace}
+  .panel-title{font-weight:600;font-size:15px;flex:1}
+  .panel-status{font-size:11px;color:var(--text3);font-family:'IBM Plex Mono',monospace;letter-spacing:0.1em;font-weight:600}
+  .panel-status.off{color:var(--unavailable)}
+  .panel-body{padding:14px}
+
+  /* MODAL — smooth scale + fade */
+  .modal-bg{position:fixed;inset:0;background:rgba(5,8,14,0);backdrop-filter:blur(0px);display:flex;align-items:center;justify-content:center;z-index:100;padding:20px;opacity:0;pointer-events:none;transition:opacity 0.25s var(--ease),backdrop-filter 0.25s var(--ease),background 0.25s var(--ease)}
+  .modal-bg.show{opacity:1;pointer-events:auto;background:rgba(5,8,14,0.85);backdrop-filter:blur(12px)}
+  .modal{background:var(--bg2);border:1px solid var(--border2);border-radius:var(--radius-lg);max-width:540px;width:100%;padding:36px;position:relative;transform:scale(0.85) translateY(30px);opacity:0;transition:transform 0.4s var(--bounce),opacity 0.25s var(--ease);box-shadow:0 24px 64px rgba(0,0,0,0.5)}
+  .modal-bg.show .modal{transform:scale(1) translateY(0);opacity:1}
+  .modal::before{content:'';position:absolute;top:0;left:24px;right:24px;height:1px;background:linear-gradient(90deg,transparent,rgba(124,122,237,0.5),transparent)}
+  .modal-close{position:absolute;top:16px;right:16px;background:transparent;border:1px solid var(--border);width:34px;height:34px;border-radius:10px;color:var(--text2);cursor:pointer;font-size:20px;display:flex;align-items:center;justify-content:center;transition:all 0.2s var(--ease)}
+  .modal-close:hover{color:var(--text);border-color:var(--border3);background:var(--bg4);transform:rotate(90deg)}
+  .modal-status{display:inline-flex;align-items:center;gap:8px;padding:7px 16px;border-radius:100px;font-size:11px;font-weight:600;letter-spacing:0.12em;font-family:'IBM Plex Mono',monospace;margin-bottom:18px}
+  .modal-status.on{background:var(--available-bg);color:var(--available);border:1px solid var(--available-border)}
+  .modal-status.off{background:var(--unavailable-bg);color:var(--unavailable);border:1px solid var(--unavailable-border)}
+  .modal-status .pulse-dot{width:8px;height:8px;border-radius:50%;background:currentColor}
+  .modal-status.on .pulse-dot{box-shadow:0 0 8px currentColor;animation:pulse 2s infinite}
+  .modal h2{font-size:26px;font-weight:600;letter-spacing:-0.02em;margin-bottom:6px;line-height:1.25}
+  .modal-dept{font-size:13px;color:var(--text3);font-family:'IBM Plex Mono',monospace;margin-bottom:24px;letter-spacing:0.05em}
+  .modal-row{display:flex;justify-content:space-between;align-items:center;padding:14px 0;border-bottom:1px solid var(--border)}
+  .modal-row:last-child{border-bottom:none}
+  .modal-row .label{font-size:12px;color:var(--text3);font-family:'IBM Plex Mono',monospace;letter-spacing:0.08em;text-transform:uppercase}
+  .modal-row .val{font-size:14px;font-weight:500;color:var(--text)}
+  .tube-pill{display:inline-flex;align-items:center;gap:8px;padding:5px 14px;border-radius:100px;font-size:13px;font-weight:500;font-family:'IBM Plex Mono',monospace}
+  .tube-dot{width:10px;height:10px;border-radius:50%;box-shadow:0 0 6px currentColor}
+
+  /* MAINTENANCE OVERLAY */
+  .maint{position:fixed;inset:0;background:linear-gradient(180deg,rgba(10,14,20,0.97),rgba(10,14,20,0.99));display:none;align-items:center;justify-content:center;z-index:200;padding:20px}
+  .maint.show{display:flex;animation:fadeIn 0.3s var(--ease)}
+  @keyframes fadeIn{from{opacity:0}to{opacity:1}}
+  .maint-card{max-width:480px;text-align:center}
+  .maint-icon{width:80px;height:80px;border-radius:20px;background:var(--warn-bg);border:1px solid var(--warn-border);display:flex;align-items:center;justify-content:center;margin:0 auto 28px;color:var(--warn);font-size:36px;font-weight:600}
+  .maint h2{font-size:32px;font-weight:600;margin-bottom:14px;letter-spacing:-0.02em}
+  .maint p{color:var(--text2);font-size:16px;line-height:1.6}
+
+  /* FOOTER */
+  footer{margin-top:80px;padding:32px 0;border-top:1px solid var(--border);text-align:center}
+  .footer-text{color:var(--text3);font-size:13px;font-family:'IBM Plex Mono',monospace}
+  .footer-link{color:var(--text2);text-decoration:none;border-bottom:1px solid var(--border);transition:color 0.2s,border-color 0.2s;cursor:pointer}
+  .footer-link:hover{color:var(--text);border-color:var(--accent)}
+
+  /* LOADING */
+  .loading{text-align:center;padding:60px 20px;color:var(--text3)}
+  .spinner{width:36px;height:36px;border:2px solid var(--border);border-top-color:var(--accent);border-radius:50%;animation:spin 0.8s linear infinite;margin:0 auto 16px}
+  @keyframes spin{to{transform:rotate(360deg)}}
+
+  .empty{text-align:center;padding:48px 20px;color:var(--text3)}
+  .empty-title{font-size:18px;color:var(--text2);margin-bottom:6px;font-weight:500}
+
+  /* SCROLLBAR */
+  ::-webkit-scrollbar{width:10px;height:10px}
+  ::-webkit-scrollbar-track{background:var(--bg2)}
+  ::-webkit-scrollbar-thumb{background:var(--bg4);border-radius:5px}
+  ::-webkit-scrollbar-thumb:hover{background:var(--bg5)}
+</style>
+</head>
+<body>
+
+<div class="maint" id="maint">
+  <div class="maint-card">
+    <div class="maint-icon">⚙</div>
+    <h2>Site under maintenance</h2>
+    <p>The MRL Pulse availability service is temporarily unavailable. Please contact the laboratory directly for test status.</p>
+  </div>
+</div>
+
+<div class="modal-bg" id="modal-bg">
+  <div class="modal">
+    <button class="modal-close" id="modal-close" aria-label="Close">×</button>
+    <div class="modal-status on" id="modal-status">
+      <span class="pulse-dot"></span>
+      <span id="modal-status-text">AVAILABLE</span>
+    </div>
+    <h2 id="modal-name">Test name</h2>
+    <div class="modal-dept" id="modal-dept">Department</div>
+    <div class="modal-row">
+      <span class="label">Sample type</span>
+      <span class="val" id="modal-sample">—</span>
+    </div>
+    <div class="modal-row">
+      <span class="label">Tube</span>
+      <span class="val" id="modal-tube">—</span>
+    </div>
+    <div class="modal-row">
+      <span class="label">Turnaround</span>
+      <span class="val" id="modal-tat">—</span>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+
+  <header>
+    <div class="logo-wrap">
+      <img src="assets/logos/cluster.png" alt="Cluster" onerror="this.style.display='none'" />
+    </div>
+    <div class="brand">
+      <div class="brand-title">
+        <span class="live-dot"></span>
+        MRL Pulse
+      </div>
+      <div class="brand-sub">LIVE TEST AVAILABILITY</div>
+    </div>
+    <div class="logo-wrap">
+      <img src="assets/logos/mrl.png" alt="MRL" onerror="this.style.display='none'" />
+    </div>
+  </header>
+
+  <section class="hero">
+    <div>
+      <h1>Know what's <span class="accent">available</span>, before drawing the sample.</h1>
+      <p>Real-time visibility into every test offered by the Madinah Regional Laboratory. Updated continuously by the lab team.</p>
+      <div class="meta-row" id="meta-row">
+        <div class="meta-pill live"><span class="live-dot"></span> Live</div>
+      </div>
+    </div>
+    <div class="counter-card">
+      <div class="counter-label">TESTS AVAILABLE NOW</div>
+      <div class="counter-row">
+        <div class="counter-num" id="counter-num">—</div>
+        <div class="counter-total">/ <span id="counter-total">—</span></div>
+      </div>
+      <div class="counter-bar">
+        <div class="counter-bar-fill" id="counter-bar" style="width:0%"></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="search-wrap">
+    <input type="text" class="search" id="search" placeholder="Search any test by name…" autocomplete="off" />
+    <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <circle cx="11" cy="11" r="8"/>
+      <path d="m21 21-4.35-4.35"/>
+    </svg>
+  </div>
+
+  <div class="chip-row" id="chips"></div>
+
+  <div id="content">
+    <div class="loading">
+      <div class="spinner"></div>
+      <div>Loading test catalogue…</div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-text">
+      Madinah Regional Laboratory · <span class="footer-link" id="refresh-link">Refresh now</span> · <span id="last-fetch-time">—</span>
+    </div>
+  </footer>
+
+</div>
+
+<script>
+(function(){
+  'use strict';
+
+  function bust(){ return Date.now() + '_' + Math.random().toString(36).substring(7); }
+  function fetchFresh(path){
+    const url = path + (path.includes('?') ? '&' : '?') + 'nocache=' + bust();
+    return fetch(url, {
+      cache: 'no-store',
+      headers: { 'Cache-Control': 'no-cache, no-store, must-revalidate', 'Pragma': 'no-cache' }
+    }).then(r => { if(!r.ok) throw new Error('HTTP ' + r.status); return r.json(); });
+  }
+
+  let TESTS = null, AVAIL = null, SELECTED = 'all', QUERY = '';
+
+  const DEPT_ICONS = {
+    molecular_diagnostic: 'MD', serology: 'SR', immunology: 'IM',
+    mycobacteriology: 'MY', flow_cytometry: 'FC', hematology: 'HM', clinical_chemistry: 'CC',
+  };
+  const TUBE_COLORS = {
+    'RED': '#D9384B', 'PURPLE': '#8956C9', 'EDTA': '#9B6FD4',
+    'TRANSPORT MEDIA': '#5DA9D6', 'STERILE TUBE': '#C8D4E8',
+    'PLAIN TUBE/ STERILE CONTAINER': '#B8C5DC', 'SLIDE': '#F0E0B0',
+  };
+
+  async function loadAll(){
+    try{
+      const [tests, avail] = await Promise.all([fetchFresh('data/tests.json'), fetchFresh('data/availability.json')]);
+      TESTS = tests; AVAIL = avail;
+      updateLastFetch(); render();
+    }catch(err){
+      console.error('Load failed:', err);
+      document.getElementById('content').innerHTML =
+        '<div class="empty"><div class="empty-title">Unable to load data</div><div>' + err.message + '</div></div>';
+    }
+  }
+
+  function updateLastFetch(){
+    const t = new Date().toLocaleTimeString('en-US', {hour:'2-digit',minute:'2-digit',second:'2-digit',hour12:false});
+    document.getElementById('last-fetch-time').textContent = 'fetched ' + t;
+  }
+
+  function render(){
+    if(!TESTS || !AVAIL) return;
+    const m = document.getElementById('maint');
+    if(AVAIL.maintenance_mode){ m.classList.add('show'); return; }
+    m.classList.remove('show');
+    renderCounter(); renderMeta(); renderChips(); renderContent();
+  }
+
+  function isAvail(t){
+    if(AVAIL.tests[t.id] === false) return false;
+    if(t.panel_id && AVAIL.panels[t.panel_id] === false) return false;
+    return true;
+  }
+
+  function renderCounter(){
+    const total = TESTS.tests.length;
+    const avail = TESTS.tests.filter(isAvail).length;
+    animateNumber('counter-num', avail);
+    document.getElementById('counter-total').textContent = total;
+    document.getElementById('counter-bar').style.width = (total>0 ? (avail/total*100) : 0) + '%';
+  }
+
+  function animateNumber(id, target){
+    const el = document.getElementById(id);
+    const start = parseInt(el.textContent) || 0;
+    const dur = 600, t0 = performance.now();
+    function step(t){
+      const p = Math.min((t - t0) / dur, 1);
+      const eased = 1 - Math.pow(1 - p, 3);
+      el.textContent = Math.round(start + (target - start) * eased);
+      if(p < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+
+  function renderMeta(){
+    const row = document.getElementById('meta-row');
+    let timeText = 'Just now';
+    if(AVAIL.last_updated){
+      try{
+        const d = new Date(AVAIL.last_updated);
+        const diff = Date.now() - d.getTime();
+        if(diff < 60000) timeText = 'Updated just now';
+        else if(diff < 3600000) timeText = 'Updated ' + Math.floor(diff/60000) + 'm ago';
+        else if(diff < 86400000) timeText = 'Updated ' + Math.floor(diff/3600000) + 'h ago';
+        else timeText = 'Updated ' + d.toLocaleDateString();
+      }catch(e){}
+    }
+    const depts = new Set(TESTS.tests.map(t => t.department_id));
+    row.innerHTML = '<div class="meta-pill live"><span class="live-dot"></span> Live</div>' +
+      '<div class="meta-pill">' + timeText + '</div>' +
+      '<div class="meta-pill">' + depts.size + ' departments · ' + TESTS.tests.length + ' tests</div>';
+  }
+
+  function renderChips(){
+    const c = document.getElementById('chips');
+    const ord = TESTS.departments.map(d => d.id);
+    let html = '<button class="chip ' + (SELECTED==='all'?'active':'') + '" data-dept="all">' +
+               '<span class="chip-dot"></span>All Departments<span class="chip-count">' + TESTS.tests.length + '</span></button>';
+    ord.forEach(deptId => {
+      const tests = TESTS.tests.filter(t => t.department_id === deptId);
+      if(!tests.length) return;
+      const dept = TESTS.departments.find(d => d.id === deptId);
+      html += '<button class="chip ' + (SELECTED===deptId?'active':'') + '" data-dept="' + deptId + '">' +
+              '<span class="chip-dot"></span>' + (dept?dept.name:deptId) + '<span class="chip-count">' + tests.length + '</span></button>';
+    });
+    c.innerHTML = html;
+    c.querySelectorAll('.chip').forEach(b => {
+      b.addEventListener('click', () => { SELECTED = b.dataset.dept; renderChips(); renderContent(); });
+    });
+  }
+
+  function renderContent(){
+    const container = document.getElementById('content');
+    const q = QUERY.toLowerCase().trim();
+    const ord = TESTS.departments.map(d => d.id);
+    const deptIds = SELECTED==='all' ? ord.filter(d => TESTS.tests.some(t => t.department_id === d)) : [SELECTED];
+
+    let html = '', totalShown = 0, deptIdx = 0;
+    deptIds.forEach(deptId => {
+      const dept = TESTS.departments.find(d => d.id === deptId);
+      const deptName = dept ? dept.name : deptId;
+      const allDeptTests = TESTS.tests.filter(t => t.department_id === deptId);
+      const filteredTests = q ? allDeptTests.filter(t => t.name.toLowerCase().includes(q)) : allDeptTests;
+      if(!filteredTests.length) return;
+
+      const panels = (TESTS.panels || []).filter(p => p.department_id === deptId);
+      const directTests = filteredTests.filter(t => !t.panel_id);
+      const panelsWithTests = panels.map(p => ({panel:p, tests:filteredTests.filter(t => t.panel_id === p.id)})).filter(pw => pw.tests.length);
+      if(!directTests.length && !panelsWithTests.length) return;
+
+      const availCount = filteredTests.filter(isAvail).length;
+      const unavailCount = filteredTests.length - availCount;
+      totalShown += filteredTests.length;
+      const delay = (deptIdx++ * 0.05);
+
+      html += '<div class="dept" style="animation-delay:' + delay + 's">';
+      html += '<div class="dept-header"><div class="dept-title-wrap">';
+      html += '<div class="dept-icon">' + (DEPT_ICONS[deptId] || '?') + '</div>';
+      html += '<div class="dept-name">' + deptName + '</div></div>';
+      html += '<div class="dept-stats"><span class="num">' + availCount + '</span> available';
+      if(unavailCount > 0) html += ' · <span class="num warn">' + unavailCount + '</span> unavailable';
+      html += ' / ' + filteredTests.length + ' total</div></div>';
+
+      panelsWithTests.forEach(pw => {
+        const ok = AVAIL.panels[pw.panel.id] !== false;
+        html += '<div class="panel ' + (ok?'':'disabled') + '">';
+        html += '<div class="panel-head"><div class="panel-icon">P</div>';
+        html += '<div class="panel-title">' + pw.panel.name + '</div>';
+        html += '<div class="panel-status ' + (ok?'':'off') + '">' + (ok?'PANEL ON':'PANEL OFF') + '</div></div>';
+        html += '<div class="panel-body"><div class="grid">';
+        pw.tests.forEach(t => { html += testCard(t); });
+        html += '</div></div></div>';
+      });
+
+      if(directTests.length){
+        html += '<div class="grid">';
+        directTests.forEach(t => { html += testCard(t); });
+        html += '</div>';
+      }
+      html += '</div>';
+    });
+
+    if(!totalShown) html = '<div class="empty"><div class="empty-title">No tests found</div><div>Try a different search term or department.</div></div>';
+    container.innerHTML = html;
+    container.querySelectorAll('.test').forEach(el => {
+      el.addEventListener('click', () => {
+        const t = TESTS.tests.find(x => x.id === el.dataset.id);
+        if(t) showModal(t);
+      });
+    });
+  }
+
+  function testCard(t){
+    const ok = isAvail(t);
+    return '<div class="test ' + (ok?'':'unavail') + '" data-id="' + t.id + '">' +
+           '<div class="test-status ' + (ok?'on':'off') + '"></div>' +
+           '<div class="test-name">' + escapeHtml(t.name) + '</div></div>';
+  }
+  function escapeHtml(s){ return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+
+  function showModal(test){
+    const ok = isAvail(test);
+    const dept = TESTS.departments.find(d => d.id === test.department_id);
+    const tubeColor = TUBE_COLORS[test.tube_color] || '#888';
+    document.getElementById('modal-status').className = 'modal-status ' + (ok?'on':'off');
+    document.getElementById('modal-status-text').textContent = ok ? 'AVAILABLE' : 'UNAVAILABLE';
+    document.getElementById('modal-name').textContent = test.name;
+    document.getElementById('modal-dept').textContent = (dept ? dept.name : test.department_id);
+    document.getElementById('modal-sample').textContent = test.sample_type || '—';
+    document.getElementById('modal-tube').innerHTML = test.tube_color
+      ? '<span class="tube-pill" style="background:' + tubeColor + '22;color:' + tubeColor + '"><span class="tube-dot" style="background:' + tubeColor + '"></span>' + escapeHtml(test.tube_color) + '</span>'
+      : '—';
+    document.getElementById('modal-tat').textContent = test.tat || '—';
+    document.getElementById('modal-bg').classList.add('show');
+    document.body.style.overflow = 'hidden';
+  }
+  function hideModal(){
+    document.getElementById('modal-bg').classList.remove('show');
+    document.body.style.overflow = '';
+  }
+
+  document.getElementById('search').addEventListener('input', e => { QUERY = e.target.value; renderContent(); });
+  document.getElementById('modal-close').addEventListener('click', hideModal);
+  document.getElementById('modal-bg').addEventListener('click', e => { if(e.target === e.currentTarget) hideModal(); });
+  document.addEventListener('keydown', e => { if(e.key === 'Escape') hideModal(); });
+  document.getElementById('refresh-link').addEventListener('click', loadAll);
+
+  loadAll();
+  setInterval(loadAll, 20000);
+})();
+</script>
+
+</body>
+</html>
