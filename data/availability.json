@@ -6,7 +6,7 @@
     "molecular_diagnostic__human_herpes_virus_6_pcr": true,
     "clinical_chemistry__ca_19_9": true,
     "clinical_chemistry__tsh": true,
-    "clinical_chemistry__free": false,
+    "clinical_chemistry__free": true,
     "molecular_diagnostic__coronavirus_cov_19_pcr": true,
     "molecular_diagnostic__haemophilus_ducreyihd_pcr": true,
     "flow_cytometry__kappa_2": true,
@@ -398,7 +398,7 @@
     "immunology__mugwort_w6": true,
     "clinical_chemistry__aldosterone": true,
     "molecular_diagnostic__alkhurma_pcr": true,
-    "immunology__anti_helicobacter_pylori_igm_h_pylori_igm_abs": false,
+    "immunology__anti_helicobacter_pylori_igm_h_pylori_igm_abs": true,
     "molecular_diagnostic__parainfluenza_virus_4_pcr": true,
     "flow_cytometry__cd56": true,
     "clinical_chemistry__blood_urea": true,
@@ -454,6 +454,6 @@
     "immunology__panel_house_dust_allergens_panel": true
   },
   "maintenance_mode": false,
-  "last_updated": "2026-05-18T10:39:54Z",
+  "last_updated": "2026-05-18T10:40:44Z",
   "updated_by": "QC"
 }
