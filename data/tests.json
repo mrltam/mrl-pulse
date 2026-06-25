@@ -1730,8 +1730,26 @@
       "tat": "7 DAYS"
     },
     {
-      "id": "immunology__ige_immunoglobulin_e_total_quantitative",
-      "name": "IgE (Immunoglobulin E) total (Quantitative)",
+      "id": "immunology__anti_islet_cell_antibody",
+      "name": "Anti-Islet cell antibody",
+      "department_id": "immunology",
+      "panel_id": null,
+      "sample_type": "SERUM",
+      "tube_color": "RED",
+      "tat": "7 DAYS"
+    },
+    {
+      "id": "immunology__anti_gad",
+      "name": "Anti-GAD",
+      "department_id": "immunology",
+      "panel_id": null,
+      "sample_type": "SERUM",
+      "tube_color": "RED",
+      "tat": "7 DAYS"
+    },
+    {
+      "id": "immunology__aige_immunoglobulin_e_total_quantitative",
+      "name": "A.IgE (Immunoglobulin E) total (Quantitative)",
       "department_id": "immunology",
       "panel_id": null,
       "sample_type": "SERUM",
@@ -2085,18 +2103,18 @@
       "name": "Grass pollens allergens panel",
       "department_id": "immunology",
       "panel_id": "immunology__panel_house_dust_allergens_panel",
-      "sample_type": "",
+      "sample_type": "SERUM",
       "tube_color": "RED",
-      "tat": ""
+      "tat": "8 DAYS"
     },
     {
       "id": "immunology__grass_pollens_mix_gx2",
       "name": "Grass pollens mix (gx2)",
       "department_id": "immunology",
       "panel_id": "immunology__panel_house_dust_allergens_panel",
-      "sample_type": "",
+      "sample_type": "SERUM",
       "tube_color": "RED",
-      "tat": ""
+      "tat": "9 DAYS"
     },
     {
       "id": "immunology__cynodon_dactylon_g2",
@@ -3548,8 +3566,8 @@
       "tat": "3 DAYS"
     },
     {
-      "id": "clinical_chemistry__free",
-      "name": "Free",
+      "id": "clinical_chemistry__free_testosterone",
+      "name": "Free testosterone",
       "department_id": "clinical_chemistry",
       "panel_id": null,
       "sample_type": "SERUM",
@@ -3692,6 +3710,15 @@
       "tat": "7 DAYS"
     },
     {
+      "id": "clinical_chemistry__17_oh_progestrone",
+      "name": "17 OH Progestrone",
+      "department_id": "clinical_chemistry",
+      "panel_id": null,
+      "sample_type": "SERUM",
+      "tube_color": "RED",
+      "tat": "7 DAYS"
+    },
+    {
       "id": "clinical_chemistry__amylase",
       "name": "Amylase",
       "department_id": "clinical_chemistry",
@@ -3771,6 +3798,222 @@
       "sample_type": "SERUM",
       "tube_color": "RED",
       "tat": "3 DAYS"
+    },
+    {
+      "id": "clinical_chemistry__carbamazepine",
+      "name": "Carbamazepine",
+      "department_id": "clinical_chemistry",
+      "panel_id": null,
+      "sample_type": "SERUM",
+      "tube_color": "RED",
+      "tat": "24 hrs"
+    },
+    {
+      "id": "clinical_chemistry__digoxin",
+      "name": "Digoxin",
+      "department_id": "clinical_chemistry",
+      "panel_id": null,
+      "sample_type": "SERUM/PLASMA",
+      "tube_color": "RED",
+      "tat": "24 hrs"
+    },
+    {
+      "id": "clinical_chemistry__gentamicin",
+      "name": "Gentamicin",
+      "department_id": "clinical_chemistry",
+      "panel_id": null,
+      "sample_type": "SERUM/PLASMA",
+      "tube_color": "RED",
+      "tat": "24 hrs"
+    },
+    {
+      "id": "clinical_chemistry__phenobarbital",
+      "name": "Phenobarbital",
+      "department_id": "clinical_chemistry",
+      "panel_id": null,
+      "sample_type": "SERUM/PLASMA",
+      "tube_color": "RED",
+      "tat": "24 hrs"
+    },
+    {
+      "id": "clinical_chemistry__phenytoin",
+      "name": "Phenytoin",
+      "department_id": "clinical_chemistry",
+      "panel_id": null,
+      "sample_type": "SERUM/PLASMA",
+      "tube_color": "RED",
+      "tat": "24 hrs"
+    },
+    {
+      "id": "clinical_chemistry__theophylline",
+      "name": "Theophylline",
+      "department_id": "clinical_chemistry",
+      "panel_id": null,
+      "sample_type": "SERUM/PLASMA",
+      "tube_color": "RED",
+      "tat": "24 hrs"
+    },
+    {
+      "id": "clinical_chemistry__valproic_acid",
+      "name": "Valproic acid",
+      "department_id": "clinical_chemistry",
+      "panel_id": null,
+      "sample_type": "SERUM/PLASMA",
+      "tube_color": "RED",
+      "tat": "24 hrs"
+    },
+    {
+      "id": "clinical_chemistry__vancomycin",
+      "name": "Vancomycin",
+      "department_id": "clinical_chemistry",
+      "panel_id": null,
+      "sample_type": "SERUM/PLASMA",
+      "tube_color": "RED",
+      "tat": "24 hrs"
+    },
+    {
+      "id": "clinical_chemistry__amikacin",
+      "name": "Amikacin",
+      "department_id": "clinical_chemistry",
+      "panel_id": null,
+      "sample_type": "SERUM/PLASMA",
+      "tube_color": "RED",
+      "tat": "24 hrs"
+    },
+    {
+      "id": "clinical_chemistry__cylclosporin",
+      "name": "Cylclosporin",
+      "department_id": "clinical_chemistry",
+      "panel_id": null,
+      "sample_type": "SERUM/PLASMA",
+      "tube_color": "RED",
+      "tat": "24 hrs"
+    },
+    {
+      "id": "clinical_chemistry__sirolmus",
+      "name": "Sirolmus",
+      "department_id": "clinical_chemistry",
+      "panel_id": null,
+      "sample_type": "SERUM/PLASMA",
+      "tube_color": "RED",
+      "tat": "24 hrs"
+    },
+    {
+      "id": "clinical_chemistry__tacrolimus",
+      "name": "Tacrolimus",
+      "department_id": "clinical_chemistry",
+      "panel_id": null,
+      "sample_type": "SERUM/PLASMA",
+      "tube_color": "RED",
+      "tat": "24 hrs"
+    },
+    {
+      "id": "clinical_chemistry__lithium",
+      "name": "Lithium",
+      "department_id": "clinical_chemistry",
+      "panel_id": null,
+      "sample_type": "SERUM/PLASMA",
+      "tube_color": "RED",
+      "tat": "24 hrs"
+    },
+    {
+      "id": "clinical_chemistry__methotrexate",
+      "name": "Methotrexate",
+      "department_id": "clinical_chemistry",
+      "panel_id": null,
+      "sample_type": "SERUM/PLASMA",
+      "tube_color": "RED",
+      "tat": "24 hrs"
+    },
+    {
+      "id": "clinical_chemistry__acetaminophen",
+      "name": "Acetaminophen",
+      "department_id": "clinical_chemistry",
+      "panel_id": null,
+      "sample_type": "SERUM/PLASMA",
+      "tube_color": "RED",
+      "tat": "24 hrs"
+    },
+    {
+      "id": "clinical_chemistry__salicylate",
+      "name": "Salicylate",
+      "department_id": "clinical_chemistry",
+      "panel_id": null,
+      "sample_type": "SERUM/PLASMA",
+      "tube_color": "RED",
+      "tat": "24 hrs"
+    },
+    {
+      "id": "clinical_chemistry__amphetamine",
+      "name": "Amphetamine",
+      "department_id": "clinical_chemistry",
+      "panel_id": null,
+      "sample_type": "URINE",
+      "tube_color": "URINE CONTAINER",
+      "tat": "24 hrs"
+    },
+    {
+      "id": "clinical_chemistry__cannabinoid",
+      "name": "Cannabinoid",
+      "department_id": "clinical_chemistry",
+      "panel_id": null,
+      "sample_type": "URINE",
+      "tube_color": "URINE CONTAINER",
+      "tat": "24 hrs"
+    },
+    {
+      "id": "clinical_chemistry__ethanol",
+      "name": "Ethanol",
+      "department_id": "clinical_chemistry",
+      "panel_id": null,
+      "sample_type": "URINE",
+      "tube_color": "URINE CONTAINER",
+      "tat": "24 hrs"
+    },
+    {
+      "id": "clinical_chemistry__opiate",
+      "name": "Opiate",
+      "department_id": "clinical_chemistry",
+      "panel_id": null,
+      "sample_type": "URINE",
+      "tube_color": "URINE CONTAINER",
+      "tat": "24 hrs"
+    },
+    {
+      "id": "clinical_chemistry__cocaine",
+      "name": "Cocaine",
+      "department_id": "clinical_chemistry",
+      "panel_id": null,
+      "sample_type": "URINE",
+      "tube_color": "URINE CONTAINER",
+      "tat": "24 hrs"
+    },
+    {
+      "id": "clinical_chemistry__barbiturates",
+      "name": "Barbiturates",
+      "department_id": "clinical_chemistry",
+      "panel_id": null,
+      "sample_type": "URINE",
+      "tube_color": "URINE CONTAINER",
+      "tat": "24 hrs"
+    },
+    {
+      "id": "clinical_chemistry__tricyclic_tca",
+      "name": "Tricyclic (TCA)",
+      "department_id": "clinical_chemistry",
+      "panel_id": null,
+      "sample_type": "URINE",
+      "tube_color": "URINE CONTAINER",
+      "tat": "24 hrs"
+    },
+    {
+      "id": "clinical_chemistry__benzodiazepines",
+      "name": "Benzodiazepines",
+      "department_id": "clinical_chemistry",
+      "panel_id": null,
+      "sample_type": "URINE",
+      "tube_color": "URINE CONTAINER",
+      "tat": "24 hrs"
     },
     {
       "id": "clinical_chemistry__alkaline_phosphatase_alp",
@@ -4043,6 +4286,6 @@
       "tat": "3 DAYS"
     }
   ],
-  "generated_at": "2026-05-05T21:40:57.058820+00:00",
-  "version": "2.0"
+  "generated_at": "2026-06-25T05:34:02.803354+00:00",
+  "version": "2.2"
 }
