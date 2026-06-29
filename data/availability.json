@@ -359,7 +359,7 @@
     "immunology__dog_e2_2": true,
     "clinical_chemistry__sirolmus": true,
     "immunology__grass_mix_gx": true,
-    "serology__chlamydia_trachomatis_igg": false,
+    "serology__chlamydia_trachomatis_igg": true,
     "serology__mycoplasma_igg": true,
     "clinical_chemistry__ethanol": true,
     "clinical_chemistry__ctx_1cross_laps": false,
@@ -481,6 +481,6 @@
     "immunology__panel_house_dust_allergens_panel": true
   },
   "maintenance_mode": false,
-  "last_updated": "2026-06-28T11:34:52Z",
+  "last_updated": "2026-06-29T08:07:43Z",
   "updated_by": "QC"
 }
