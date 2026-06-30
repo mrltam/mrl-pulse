@@ -992,6 +992,15 @@
       "tat": "7 DAYS"
     },
     {
+      "id": "serology__hev",
+      "name": "HEV",
+      "department_id": "serology",
+      "panel_id": null,
+      "sample_type": "SERUM",
+      "tube_color": "RED",
+      "tat": "7 DAYS"
+    },
+    {
       "id": "serology__hepatitis_b_surface_antigen_hbs_ag",
       "name": "Hepatitis B Surface Antigen (HBs Ag)",
       "department_id": "serology",
@@ -4286,6 +4295,6 @@
       "tat": "3 DAYS"
     }
   ],
-  "generated_at": "2026-06-25T05:34:02.803354+00:00",
-  "version": "2.2"
+  "generated_at": "2026-06-30T09:52:31.389644+00:00",
+  "version": "2.3"
 }
