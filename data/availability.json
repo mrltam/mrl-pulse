@@ -200,7 +200,7 @@
     "clinical_chemistry__total_proteins": true,
     "serology__dengue_igg": true,
     "serology__mycoplasma_igm": true,
-    "clinical_chemistry__c_peptide": false,
+    "clinical_chemistry__c_peptide": true,
     "molecular_diagnostic__detection_of_high_risk_types_of_human_papilloma_virus_pcr": true,
     "immunology__peanut_f13_2": true,
     "clinical_chemistry__gentamicin": true,
@@ -481,6 +481,6 @@
     "immunology__panel_house_dust_allergens_panel": true
   },
   "maintenance_mode": false,
-  "last_updated": "2026-06-29T08:07:43Z",
+  "last_updated": "2026-06-30T09:07:52Z",
   "updated_by": "QC"
 }
