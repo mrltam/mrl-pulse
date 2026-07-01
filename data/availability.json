@@ -57,7 +57,7 @@
     "immunology__cladosporium_herbarum_m2": true,
     "flow_cytometry__cd7": true,
     "immunology__orange_f33": true,
-    "immunology__anti_ccp_anti_cyclic_citrullinated_peptide": false,
+    "immunology__anti_ccp_anti_cyclic_citrullinated_peptide": true,
     "clinical_chemistry__ft3": true,
     "molecular_diagnostic__respiratory_syncytial_virus_ab_pcr": true,
     "serology__hepatitis_b_envelope_antigen_hbe_ag": true,
@@ -431,7 +431,7 @@
     "clinical_chemistry__blood_urea": true,
     "molecular_diagnostic__ureaplasma_parvum_up_pcr": true,
     "molecular_diagnostic__giardia_lambila_pcr": true,
-    "clinical_chemistry__total_bilirubin": false,
+    "clinical_chemistry__total_bilirubin": true,
     "molecular_diagnostic__plesiomonas_shigelloides_pcr": true,
     "immunology__chicken_feather_e85": true,
     "serology__hepatitis_b_surface_antibodies_anti_hbs": true,
@@ -482,6 +482,6 @@
     "immunology__panel_house_dust_allergens_panel": true
   },
   "maintenance_mode": false,
-  "last_updated": "2026-06-30T10:12:37Z",
+  "last_updated": "2026-07-01T09:44:17Z",
   "updated_by": "QC"
 }
