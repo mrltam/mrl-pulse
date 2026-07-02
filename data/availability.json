@@ -363,7 +363,7 @@
     "serology__chlamydia_trachomatis_igg": true,
     "serology__mycoplasma_igg": true,
     "clinical_chemistry__ethanol": true,
-    "clinical_chemistry__ctx_1cross_laps": false,
+    "clinical_chemistry__ctx_1cross_laps": true,
     "clinical_chemistry__cylclosporin": true,
     "molecular_diagnostic__bocavirus_pcr": true,
     "serology__hepatitis_b_envelope_antibody_anti_hbe": false,
@@ -482,6 +482,6 @@
     "immunology__panel_house_dust_allergens_panel": true
   },
   "maintenance_mode": false,
-  "last_updated": "2026-07-02T08:30:42Z",
+  "last_updated": "2026-07-02T08:48:29Z",
   "updated_by": "QC"
 }
