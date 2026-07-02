@@ -192,7 +192,7 @@
     "immunology__aspergillus_fumigatus_m3_2": true,
     "immunology__anti_helicobacter_pylori_igg_hpylori_igg_abs": true,
     "serology__chlamydia_pneumonia_igm": true,
-    "clinical_chemistry__alt": false,
+    "clinical_chemistry__alt": true,
     "immunology__peanut_f13": true,
     "immunology__asot_antistreptolysin": true,
     "immunology__plantago_lanceolate_w9": true,
@@ -217,7 +217,7 @@
     "immunology__betula_verrucosa_t3_2": true,
     "flow_cytometry__cd15": true,
     "clinical_chemistry__ck_total": true,
-    "clinical_chemistry__ck_mb": false,
+    "clinical_chemistry__ck_mb": true,
     "serology__hepatitis_c_virus_hcv_ab": true,
     "flow_cytometry__cd11c": true,
     "flow_cytometry__cd45_3": true,
@@ -482,6 +482,6 @@
     "immunology__panel_house_dust_allergens_panel": true
   },
   "maintenance_mode": false,
-  "last_updated": "2026-07-01T09:44:17Z",
+  "last_updated": "2026-07-02T08:30:42Z",
   "updated_by": "QC"
 }
