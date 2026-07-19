@@ -152,7 +152,7 @@
     "immunology__ana_antinuclear_antibody": true,
     "immunology__gluten_f79": true,
     "mycobacteriology__tb_ntm_nontuberculous_mycobacteria_genexpert_pcr": true,
-    "serology__rubella_igg": false,
+    "serology__rubella_igg": true,
     "immunology__lkm_ab_liver_kidney_microsomal_ag": true,
     "flow_cytometry__cd16": true,
     "mycobacteriology__routine_culture_for_tb": true,
@@ -482,6 +482,6 @@
     "immunology__panel_house_dust_allergens_panel": true
   },
   "maintenance_mode": false,
-  "last_updated": "2026-07-19T07:52:38Z",
-  "updated_by": "QC"
+  "last_updated": "2026-07-19T08:04:37Z",
+  "updated_by": "qc"
 }
