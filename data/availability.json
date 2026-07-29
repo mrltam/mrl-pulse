@@ -92,7 +92,7 @@
     "molecular_diagnostic__listeria_monocytogenes_pcr": true,
     "molecular_diagnostic__dengue_fever_pcr": true,
     "flow_cytometry__cd1a": true,
-    "clinical_chemistry__growth_hormone": true,
+    "clinical_chemistry__growth_hormone": false,
     "immunology__artemisia_vulgaris_w6": true,
     "immunology__candida_albicans_m5": true,
     "clinical_chemistry__testosterone": true,
@@ -482,6 +482,6 @@
     "immunology__panel_house_dust_allergens_panel": true
   },
   "maintenance_mode": false,
-  "last_updated": "2026-07-29T06:16:48Z",
+  "last_updated": "2026-07-29T06:57:51Z",
   "updated_by": "Qc"
 }
