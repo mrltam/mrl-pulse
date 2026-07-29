@@ -3,7 +3,7 @@
     "molecular_diagnostic__coronavirus_hku1_pcr": true,
     "clinical_chemistry__vancomycin": true,
     "serology__herpes_simplex_virus_type_1_igg": true,
-    "serology__rapid_plasma_reagin_rpr_for_syphilis_titer": false,
+    "serology__rapid_plasma_reagin_rpr_for_syphilis_titer": true,
     "molecular_diagnostic__human_herpes_virus_6_pcr": true,
     "clinical_chemistry__ca_19_9": true,
     "clinical_chemistry__tsh": true,
@@ -346,7 +346,7 @@
     "immunology__timothy_grass_g6": true,
     "immunology__cockroach_german_i6": true,
     "immunology__weed_pollens_wx2": true,
-    "molecular_diagnostic__hepatitis_b_virus_hbv_pcr": true,
+    "molecular_diagnostic__hepatitis_b_virus_hbv_pcr": false,
     "molecular_diagnostic__parainfluenza_virus_3_pcr": true,
     "molecular_diagnostic__mycoplasma_genitalium_mg_pcr": true,
     "immunology__birch_t3": true,
@@ -482,6 +482,6 @@
     "immunology__panel_house_dust_allergens_panel": true
   },
   "maintenance_mode": false,
-  "last_updated": "2026-07-19T08:04:37Z",
-  "updated_by": "qc"
+  "last_updated": "2026-07-29T06:14:00Z",
+  "updated_by": "Qc"
 }
