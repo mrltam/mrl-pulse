@@ -208,7 +208,7 @@
     "immunology__milk_f2": true,
     "clinical_chemistry__ca_125": true,
     "flow_cytometry__cd8": true,
-    "serology__dengue_igm": true,
+    "serology__dengue_igm": false,
     "molecular_diagnostic__ngnesseria_gonorhoea_pcr": true,
     "serology__syphilis_ab_by_eliza": true,
     "molecular_diagnostic__adenovirus_pcr": true,
@@ -482,6 +482,6 @@
     "immunology__panel_house_dust_allergens_panel": true
   },
   "maintenance_mode": false,
-  "last_updated": "2026-07-29T06:57:51Z",
-  "updated_by": "Qc"
+  "last_updated": "2026-08-05T11:25:35Z",
+  "updated_by": "QC"
 }
