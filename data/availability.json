@@ -49,7 +49,7 @@
     "flow_cytometry__kappa": true,
     "flow_cytometry__cd61": true,
     "clinical_chemistry__theophylline": true,
-    "serology__hav_igm": true,
+    "serology__hav_igm": false,
     "flow_cytometry__cd41_a": true,
     "flow_cytometry__cd4": true,
     "immunology__tomato_f25": true,
@@ -482,6 +482,6 @@
     "immunology__panel_house_dust_allergens_panel": true
   },
   "maintenance_mode": false,
-  "last_updated": "2026-08-12T07:37:58Z",
+  "last_updated": "2026-08-13T07:05:40Z",
   "updated_by": "QC"
 }
