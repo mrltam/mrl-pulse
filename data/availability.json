@@ -145,7 +145,7 @@
     "immunology__dermatophagoides_pter_d1": true,
     "immunology__ambrosia_psilostachya_w2": true,
     "clinical_chemistry__amphetamine": true,
-    "immunology__soya_bean_f14": false,
+    "immunology__soya_bean_f14": true,
     "immunology__tissuetransglutaminase_iga_ttg_iga": true,
     "immunology__lolium_perenne_g5": true,
     "flow_cytometry__cd20_2": true,
@@ -193,7 +193,7 @@
     "immunology__anti_helicobacter_pylori_igg_hpylori_igg_abs": true,
     "serology__chlamydia_pneumonia_igm": true,
     "clinical_chemistry__alt": true,
-    "immunology__peanut_f13": false,
+    "immunology__peanut_f13": true,
     "immunology__asot_antistreptolysin": true,
     "immunology__plantago_lanceolate_w9": true,
     "molecular_diagnostic__human_immune_virus_hiv_pcr": true,
@@ -482,6 +482,6 @@
     "immunology__panel_house_dust_allergens_panel": true
   },
   "maintenance_mode": false,
-  "last_updated": "2026-08-16T06:08:16Z",
+  "last_updated": "2026-08-16T06:39:33Z",
   "updated_by": "QC"
 }
