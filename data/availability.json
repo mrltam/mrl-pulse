@@ -129,7 +129,7 @@
     "molecular_diagnostic__norovirus_gii_pcr": true,
     "immunology__anti_ss_a_ro_abs": true,
     "serology__western_blot_for_hiv": true,
-    "serology__epstein_barr_virus_ebv_igm": true,
+    "serology__epstein_barr_virus_ebv_igm": false,
     "immunology__animal_mix_ex1": true,
     "immunology__buck_wheat_f11": true,
     "immunology__holister_stier_labs_h1": true,
@@ -482,6 +482,6 @@
     "immunology__panel_house_dust_allergens_panel": true
   },
   "maintenance_mode": false,
-  "last_updated": "2026-08-16T07:50:02Z",
+  "last_updated": "2026-08-19T05:39:59Z",
   "updated_by": "QC"
 }
