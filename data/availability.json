@@ -346,7 +346,7 @@
     "immunology__timothy_grass_g6": true,
     "immunology__cockroach_german_i6": true,
     "immunology__weed_pollens_wx2": true,
-    "molecular_diagnostic__hepatitis_b_virus_hbv_pcr": false,
+    "molecular_diagnostic__hepatitis_b_virus_hbv_pcr": true,
     "molecular_diagnostic__parainfluenza_virus_3_pcr": true,
     "molecular_diagnostic__mycoplasma_genitalium_mg_pcr": false,
     "immunology__birch_t3": true,
@@ -482,6 +482,6 @@
     "immunology__panel_house_dust_allergens_panel": true
   },
   "maintenance_mode": false,
-  "last_updated": "2026-08-19T05:47:54Z",
+  "last_updated": "2026-08-23T06:43:05Z",
   "updated_by": "QC"
 }
