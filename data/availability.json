@@ -87,7 +87,7 @@
     "immunology__poa_pratensis_g8": true,
     "immunology__olive_t9": true,
     "flow_cytometry__cd56_2": true,
-    "immunology__fishf3": true,
+    "immunology__fishf3": false,
     "serology__hepatitis_b_surface_antigen_hbs_ag": true,
     "molecular_diagnostic__listeria_monocytogenes_pcr": true,
     "molecular_diagnostic__dengue_fever_pcr": true,
@@ -193,7 +193,7 @@
     "immunology__anti_helicobacter_pylori_igg_hpylori_igg_abs": true,
     "serology__chlamydia_pneumonia_igm": true,
     "clinical_chemistry__alt": true,
-    "immunology__peanut_f13": true,
+    "immunology__peanut_f13": false,
     "immunology__asot_antistreptolysin": true,
     "immunology__plantago_lanceolate_w9": true,
     "molecular_diagnostic__human_immune_virus_hiv_pcr": true,
@@ -482,6 +482,6 @@
     "immunology__panel_house_dust_allergens_panel": true
   },
   "maintenance_mode": false,
-  "last_updated": "2026-08-23T06:44:23Z",
-  "updated_by": "QC"
+  "last_updated": "2026-08-23T07:21:45Z",
+  "updated_by": "Qc"
 }
