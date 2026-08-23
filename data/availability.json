@@ -116,7 +116,7 @@
     "immunology__penicillium_notatum_m1": true,
     "molecular_diagnostic__parainfluenza_virus_2_pcr": true,
     "molecular_diagnostic__human_parechovirus_pcr": true,
-    "clinical_chemistry__opiate": true,
+    "clinical_chemistry__opiate": false,
     "serology__varicella_zoster_virus_vzv_igm": true,
     "clinical_chemistry__triglycerides": true,
     "immunology__soyabean_f14": true,
@@ -482,6 +482,6 @@
     "immunology__panel_house_dust_allergens_panel": true
   },
   "maintenance_mode": false,
-  "last_updated": "2026-08-23T06:43:05Z",
+  "last_updated": "2026-08-23T06:44:23Z",
   "updated_by": "QC"
 }
