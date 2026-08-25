@@ -325,7 +325,7 @@
     "clinical_chemistry__uric_acid": true,
     "flow_cytometry__cd30": true,
     "molecular_diagnostic__rift_valley_fever_rvf_pcr": true,
-    "serology__hev": false,
+    "serology__hev": true,
     "immunology__β2_glycoprotein_1_igg": true,
     "clinical_chemistry__tacrolimus": true,
     "clinical_chemistry__blood_urea_nitrogen": true,
@@ -482,6 +482,6 @@
     "immunology__panel_house_dust_allergens_panel": true
   },
   "maintenance_mode": false,
-  "last_updated": "2026-08-23T07:26:59Z",
-  "updated_by": "Qc"
+  "last_updated": "2026-08-25T10:48:13Z",
+  "updated_by": "QC"
 }
