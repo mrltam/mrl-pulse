@@ -35,7 +35,7 @@
     "immunology__alternaria_altemata_m6": true,
     "clinical_chemistry__estradiol_e2": true,
     "immunology__anti_phosphatidylserine_iga": true,
-    "immunology__mango_fruit_f91": false,
+    "immunology__mango_fruit_f91": true,
     "serology__cytomegalovirus_igg_cmv_igg": true,
     "immunology__horse_e3_2": true,
     "flow_cytometry__cd14": true,
@@ -482,6 +482,6 @@
     "immunology__panel_house_dust_allergens_panel": true
   },
   "maintenance_mode": false,
-  "last_updated": "2026-08-25T10:48:13Z",
+  "last_updated": "2026-08-27T08:55:58Z",
   "updated_by": "QC"
 }
