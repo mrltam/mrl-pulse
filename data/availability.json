@@ -203,7 +203,7 @@
     "clinical_chemistry__c_peptide": true,
     "molecular_diagnostic__detection_of_high_risk_types_of_human_papilloma_virus_pcr": true,
     "immunology__peanut_f13_2": true,
-    "clinical_chemistry__gentamicin": true,
+    "clinical_chemistry__gentamicin": false,
     "clinical_chemistry__serum_albumin": true,
     "immunology__milk_f2": true,
     "clinical_chemistry__ca_125": true,
@@ -482,6 +482,6 @@
     "immunology__panel_house_dust_allergens_panel": true
   },
   "maintenance_mode": false,
-  "last_updated": "2026-08-30T07:55:59Z",
+  "last_updated": "2026-09-01T05:52:45Z",
   "updated_by": "QC"
 }
