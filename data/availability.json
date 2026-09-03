@@ -60,7 +60,7 @@
     "immunology__anti_ccp_anti_cyclic_citrullinated_peptide": true,
     "clinical_chemistry__ft3": true,
     "molecular_diagnostic__respiratory_syncytial_virus_ab_pcr": true,
-    "serology__hepatitis_b_envelope_antigen_hbe_ag": false,
+    "serology__hepatitis_b_envelope_antigen_hbe_ag": true,
     "flow_cytometry__cd5": true,
     "serology__htlv_ab": true,
     "immunology__grass_pollens_mix_gx2": true,
@@ -366,7 +366,7 @@
     "clinical_chemistry__ctx_1cross_laps": true,
     "clinical_chemistry__cylclosporin": true,
     "molecular_diagnostic__bocavirus_pcr": true,
-    "serology__hepatitis_b_envelope_antibody_anti_hbe": false,
+    "serology__hepatitis_b_envelope_antibody_anti_hbe": true,
     "flow_cytometry__tdt": true,
     "immunology__cat_epithelium_e1": true,
     "molecular_diagnostic__vibrio_cholera_pcr": true,
@@ -419,7 +419,7 @@
     "molecular_diagnostic__clostridium_difficile_tcdatcdb_pcr": true,
     "immunology__immunoglobulin_g_igg": true,
     "immunology__mugwort_w6_2": true,
-    "serology__epstein_barr_virus_ebv_igg": true,
+    "serology__epstein_barr_virus_ebv_igg": false,
     "molecular_diagnostic__varicella_zoster_virus_vzv_pcr": true,
     "flow_cytometry__cd38": true,
     "immunology__mugwort_w6": true,
@@ -482,6 +482,6 @@
     "immunology__panel_house_dust_allergens_panel": true
   },
   "maintenance_mode": false,
-  "last_updated": "2026-09-01T05:52:45Z",
+  "last_updated": "2026-09-03T08:10:57Z",
   "updated_by": "QC"
 }
