@@ -52,7 +52,7 @@
     "serology__hav_igm": false,
     "flow_cytometry__cd41_a": true,
     "flow_cytometry__cd4": true,
-    "immunology__tomato_f25": false,
+    "immunology__tomato_f25": true,
     "immunology__anti_jo_1": true,
     "immunology__cladosporium_herbarum_m2": true,
     "flow_cytometry__cd7": true,
@@ -482,6 +482,6 @@
     "immunology__panel_house_dust_allergens_panel": true
   },
   "maintenance_mode": false,
-  "last_updated": "2026-09-29T05:13:06Z",
+  "last_updated": "2026-09-29T10:58:05Z",
   "updated_by": "QC"
 }
