@@ -90,7 +90,7 @@
     "immunology__fishf3": false,
     "serology__hepatitis_b_surface_antigen_hbs_ag": true,
     "molecular_diagnostic__listeria_monocytogenes_pcr": true,
-    "molecular_diagnostic__dengue_fever_pcr": true,
+    "molecular_diagnostic__dengue_fever_pcr": false,
     "flow_cytometry__cd1a": true,
     "clinical_chemistry__growth_hormone": true,
     "immunology__artemisia_vulgaris_w6": true,
@@ -482,6 +482,6 @@
     "immunology__panel_house_dust_allergens_panel": true
   },
   "maintenance_mode": false,
-  "last_updated": "2026-10-01T10:40:20Z",
+  "last_updated": "2026-10-04T10:08:38Z",
   "updated_by": "QC"
 }
