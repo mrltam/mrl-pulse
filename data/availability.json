@@ -308,7 +308,7 @@
     "molecular_diagnostic__rsv_pcr": true,
     "clinical_chemistry__free_testosterone": false,
     "clinical_chemistry__gamma_glutamyltransferase_ggt": true,
-    "serology__riba_hcv": true,
+    "serology__riba_hcv": false,
     "serology__chlamydia_trachomatis_igm": true,
     "molecular_diagnostic__influenza_b_pcr": true,
     "molecular_diagnostic__shiga_like_toxin_producing_ecoli_stec_o157h7_pcr": true,
@@ -482,6 +482,6 @@
     "immunology__panel_house_dust_allergens_panel": true
   },
   "maintenance_mode": false,
-  "last_updated": "2026-10-11T07:37:10Z",
+  "last_updated": "2026-10-11T07:37:51Z",
   "updated_by": "QC"
 }
