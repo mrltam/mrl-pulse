@@ -203,7 +203,7 @@
     "clinical_chemistry__c_peptide": true,
     "molecular_diagnostic__detection_of_high_risk_types_of_human_papilloma_virus_pcr": true,
     "immunology__peanut_f13_2": true,
-    "clinical_chemistry__gentamicin": false,
+    "clinical_chemistry__gentamicin": true,
     "clinical_chemistry__serum_albumin": true,
     "immunology__milk_f2": true,
     "clinical_chemistry__ca_125": true,
@@ -319,7 +319,7 @@
     "immunology__blatella_germanica_i6": true,
     "molecular_diagnostic__astrovirus_pcr": true,
     "flow_cytometry__cd79a": true,
-    "clinical_chemistry__barbiturates": false,
+    "clinical_chemistry__barbiturates": true,
     "immunology__dermatophagoides_farnae_d2": true,
     "serology__hdv_ab": true,
     "clinical_chemistry__uric_acid": true,
@@ -423,7 +423,7 @@
     "molecular_diagnostic__varicella_zoster_virus_vzv_pcr": true,
     "flow_cytometry__cd38": true,
     "immunology__mugwort_w6": true,
-    "clinical_chemistry__aldosterone": false,
+    "clinical_chemistry__aldosterone": true,
     "molecular_diagnostic__alkhurma_pcr": false,
     "immunology__anti_helicobacter_pylori_igm_h_pylori_igm_abs": true,
     "molecular_diagnostic__parainfluenza_virus_4_pcr": true,
@@ -482,6 +482,6 @@
     "immunology__panel_house_dust_allergens_panel": true
   },
   "maintenance_mode": false,
-  "last_updated": "2026-10-11T07:37:51Z",
+  "last_updated": "2026-10-11T07:39:21Z",
   "updated_by": "QC"
 }
