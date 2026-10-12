@@ -467,7 +467,7 @@
     "clinical_chemistry__tricyclic_tca": true,
     "molecular_diagnostic__neisseria_gonorrhoeae_ng_pcr": true,
     "molecular_diagnostic__enterotoxigenic_e_coli_etec_pcr": true,
-    "clinical_chemistry__amikacin": true
+    "clinical_chemistry__amikacin": false
   },
   "panels": {
     "immunology__panel_tree_pollens_allergens_panel_2": true,
@@ -482,6 +482,6 @@
     "immunology__panel_house_dust_allergens_panel": true
   },
   "maintenance_mode": false,
-  "last_updated": "2026-10-12T06:23:20Z",
+  "last_updated": "2026-10-12T11:03:38Z",
   "updated_by": "QC"
 }
