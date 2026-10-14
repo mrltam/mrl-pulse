@@ -41,7 +41,7 @@
     "flow_cytometry__cd14": true,
     "immunology__immunoglobulin_m_igm": true,
     "immunology__anti_topo_iscl_70": true,
-    "immunology__barley_f6": true,
+    "immunology__barley_f6": false,
     "molecular_diagnostic__influenza_a_subtype_h1_pcr": true,
     "molecular_diagnostic__influenza_a_subtype_h3_pcr": true,
     "immunology__rice_f9_2": true,
@@ -56,7 +56,7 @@
     "immunology__anti_jo_1": true,
     "immunology__cladosporium_herbarum_m2": true,
     "flow_cytometry__cd7": true,
-    "immunology__orange_f33": true,
+    "immunology__orange_f33": false,
     "immunology__anti_ccp_anti_cyclic_citrullinated_peptide": true,
     "clinical_chemistry__ft3": true,
     "molecular_diagnostic__respiratory_syncytial_virus_ab_pcr": true,
@@ -127,7 +127,7 @@
     "flow_cytometry__cd19": true,
     "flow_cytometry__cd38_2": true,
     "molecular_diagnostic__norovirus_gii_pcr": true,
-    "immunology__anti_ss_a_ro_abs": true,
+    "immunology__anti_ss_a_ro_abs": false,
     "serology__western_blot_for_hiv": true,
     "serology__epstein_barr_virus_ebv_igm": false,
     "immunology__animal_mix_ex1": true,
@@ -150,7 +150,7 @@
     "immunology__lolium_perenne_g5": true,
     "flow_cytometry__cd20_2": true,
     "immunology__ana_antinuclear_antibody": true,
-    "immunology__gluten_f79": true,
+    "immunology__gluten_f79": false,
     "mycobacteriology__tb_ntm_nontuberculous_mycobacteria_genexpert_pcr": true,
     "serology__rubella_igg": true,
     "immunology__lkm_ab_liver_kidney_microsomal_ag": true,
@@ -482,6 +482,6 @@
     "immunology__panel_house_dust_allergens_panel": true
   },
   "maintenance_mode": false,
-  "last_updated": "2026-10-14T08:30:31Z",
+  "last_updated": "2026-10-14T08:33:39Z",
   "updated_by": "QC"
 }
