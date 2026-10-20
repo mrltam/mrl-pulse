@@ -80,7 +80,7 @@
     "molecular_diagnostic__trichomonas_vaginalis_tv_pcr": true,
     "molecular_diagnostic__herpes_simplex_virus_hsv_i_ii_pcr": true,
     "immunology__alternaria_alternata_m6": true,
-    "immunology__shrimp_f24": true,
+    "immunology__shrimp_f24": false,
     "clinical_chemistry__cocaine": true,
     "clinical_chemistry__phosphorus": true,
     "clinical_chemistry__cannabinoid": true,
@@ -391,7 +391,7 @@
     "immunology__codfish_f3": true,
     "immunology__c3_complement_3": true,
     "flow_cytometry__hla_dr": true,
-    "immunology__rice_f9": true,
+    "immunology__rice_f9": false,
     "immunology__anti_parietal_cell_antibody_apca": true,
     "immunology__betula_verrucosa_t3": true,
     "immunology__alph_lactalbumin_f76": true,
@@ -482,6 +482,6 @@
     "immunology__panel_house_dust_allergens_panel": true
   },
   "maintenance_mode": false,
-  "last_updated": "2026-10-19T08:31:04Z",
+  "last_updated": "2026-10-20T08:50:21Z",
   "updated_by": "QC"
 }
