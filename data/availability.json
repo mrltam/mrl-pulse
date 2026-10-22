@@ -127,7 +127,7 @@
     "flow_cytometry__cd19": true,
     "flow_cytometry__cd38_2": true,
     "molecular_diagnostic__norovirus_gii_pcr": true,
-    "immunology__anti_ss_a_ro_abs": false,
+    "immunology__anti_ss_a_ro_abs": true,
     "serology__western_blot_for_hiv": true,
     "serology__epstein_barr_virus_ebv_igm": false,
     "immunology__animal_mix_ex1": true,
@@ -251,7 +251,7 @@
     "molecular_diagnostic__streptococcus_pyogenes_pcr": true,
     "immunology__alternaria_alternata_m6_2": true,
     "molecular_diagnostic__varicella_zoster_virus_vzv_pcr_2": true,
-    "immunology__tuna_f40": true,
+    "immunology__tuna_f40": false,
     "immunology__acer_negundo_t1_2": true,
     "immunology__anticardiolipin_igg": true,
     "immunology__aspergillus_fumigatus_m3_3": true,
@@ -482,6 +482,6 @@
     "immunology__panel_house_dust_allergens_panel": true
   },
   "maintenance_mode": false,
-  "last_updated": "2026-10-20T08:50:21Z",
+  "last_updated": "2026-10-22T07:32:45Z",
   "updated_by": "QC"
 }
