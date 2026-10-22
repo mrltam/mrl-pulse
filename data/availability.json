@@ -267,7 +267,7 @@
     "immunology__atriplex_lentiformis_w15": true,
     "immunology__dog_epithelium_e2": true,
     "clinical_chemistry__k": true,
-    "immunology__tissuetransglutaminase_igg_ttg_igg": true,
+    "immunology__tissuetransglutaminase_igg_ttg_igg": false,
     "immunology__anti_ss_b_la_abs": true,
     "immunology__acer_negundo_t1": true,
     "immunology__house_dust_mix_hx2": true,
@@ -482,6 +482,6 @@
     "immunology__panel_house_dust_allergens_panel": true
   },
   "maintenance_mode": false,
-  "last_updated": "2026-10-22T07:32:45Z",
+  "last_updated": "2026-10-22T07:33:55Z",
   "updated_by": "QC"
 }
