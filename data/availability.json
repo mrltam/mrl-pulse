@@ -366,7 +366,7 @@
     "clinical_chemistry__ctx_1cross_laps": true,
     "clinical_chemistry__cylclosporin": true,
     "molecular_diagnostic__bocavirus_pcr": true,
-    "serology__hepatitis_b_envelope_antibody_anti_hbe": true,
+    "serology__hepatitis_b_envelope_antibody_anti_hbe": false,
     "flow_cytometry__tdt": true,
     "immunology__cat_epithelium_e1": true,
     "molecular_diagnostic__vibrio_cholera_pcr": true,
@@ -482,6 +482,6 @@
     "immunology__panel_house_dust_allergens_panel": true
   },
   "maintenance_mode": false,
-  "last_updated": "2026-10-22T07:33:55Z",
+  "last_updated": "2026-10-22T07:34:58Z",
   "updated_by": "QC"
 }
