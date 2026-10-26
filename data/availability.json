@@ -193,7 +193,7 @@
     "immunology__anti_helicobacter_pylori_igg_hpylori_igg_abs": true,
     "serology__chlamydia_pneumonia_igm": true,
     "clinical_chemistry__alt": true,
-    "immunology__peanut_f13": true,
+    "immunology__peanut_f13": false,
     "immunology__asot_antistreptolysin": true,
     "immunology__plantago_lanceolate_w9": true,
     "molecular_diagnostic__human_immune_virus_hiv_pcr": true,
@@ -241,7 +241,7 @@
     "flow_cytometry__fmc7": true,
     "serology__toxoplasmosis_igm": true,
     "molecular_diagnostic__entamoeba_histolitica_pcr": true,
-    "immunology__banana_f92": true,
+    "immunology__banana_f92": false,
     "clinical_chemistry__lithium": true,
     "immunology__egg_white_f1": false,
     "clinical_chemistry__valproic_acid": true,
@@ -445,7 +445,7 @@
     "immunology__dermatophagoides_pter_d1_2": true,
     "flow_cytometry__cd19_3": true,
     "immunology__fagus_grandifolia_t5_2": true,
-    "immunology__cacao_f93": true,
+    "immunology__cacao_f93": false,
     "clinical_chemistry__pth": true,
     "molecular_diagnostic__streptococcus_agalactiae_pcr": true,
     "flow_cytometry__cd2": true,
@@ -482,6 +482,6 @@
     "immunology__panel_house_dust_allergens_panel": true
   },
   "maintenance_mode": false,
-  "last_updated": "2026-10-22T07:34:58Z",
+  "last_updated": "2026-10-26T10:24:19Z",
   "updated_by": "QC"
 }
