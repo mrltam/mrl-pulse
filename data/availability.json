@@ -230,7 +230,7 @@
     "flow_cytometry__cd10": true,
     "molecular_diagnostic__herps_simplex_virus_type1_hsv1_pcr": true,
     "clinical_chemistry__amylase": true,
-    "clinical_chemistry__17_oh_progestrone": false,
+    "clinical_chemistry__17_oh_progestrone": true,
     "immunology__alder_t2": true,
     "immunology__casein_f78": true,
     "molecular_diagnostic__human_adenovirus_f40f41_pcr": true,
@@ -482,6 +482,6 @@
     "immunology__panel_house_dust_allergens_panel": true
   },
   "maintenance_mode": false,
-  "last_updated": "2026-10-26T10:24:19Z",
+  "last_updated": "2026-10-29T09:32:43Z",
   "updated_by": "QC"
 }
