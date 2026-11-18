@@ -292,7 +292,7 @@
     "serology__hav_igg": false,
     "immunology__anti_gliadin_igg": true,
     "clinical_chemistry__tibc": true,
-    "clinical_chemistry__benzodiazepines": true,
+    "clinical_chemistry__benzodiazepines": false,
     "molecular_diagnostic__sapovirusgigiigivgv_pcr": true,
     "clinical_chemistry__progesterone": true,
     "clinical_chemistry__ferritin": true,
@@ -370,7 +370,7 @@
     "serology__epstein_barr_virus_ebv_igg": false,
     "molecular_diagnostic__varicella_zoster_virus_vzv_pcr": true,
     "immunology__mugwort_w6": true,
-    "clinical_chemistry__aldosterone": true,
+    "clinical_chemistry__aldosterone": false,
     "molecular_diagnostic__alkhurma_pcr": false,
     "immunology__anti_helicobacter_pylori_igm_h_pylori_igm_abs": false,
     "molecular_diagnostic__parainfluenza_virus_4_pcr": true,
@@ -406,7 +406,7 @@
     "clinical_chemistry__tricyclic_tca": true,
     "molecular_diagnostic__neisseria_gonorrhoeae_ng_pcr": true,
     "molecular_diagnostic__enterotoxigenic_e_coli_etec_pcr": true,
-    "clinical_chemistry__amikacin": false
+    "clinical_chemistry__amikacin": true
   },
   "panels": {
     "immunology__panel_tree_pollens_allergens_panel_2": true,
@@ -421,6 +421,6 @@
     "immunology__panel_house_dust_allergens_panel": true
   },
   "maintenance_mode": false,
-  "last_updated": "2026-11-18T09:16:58Z",
+  "last_updated": "2026-11-18T09:36:18Z",
   "updated_by": "QC"
 }
