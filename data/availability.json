@@ -29,7 +29,7 @@
     "molecular_diagnostic__crimean_congo_cchf_pcr": true,
     "serology__rubella_igm": true,
     "molecular_diagnostic__neoformansgattii_pcr": true,
-    "immunology__food_mix_fx5": true,
+    "immunology__food_mix_fx5": false,
     "immunology__alternaria_altemata_m6": true,
     "clinical_chemistry__estradiol_e2": true,
     "immunology__anti_phosphatidylserine_iga": true,
@@ -234,7 +234,7 @@
     "immunology__atriplex_lentiformis_w15": true,
     "immunology__dog_epithelium_e2": true,
     "clinical_chemistry__k": true,
-    "immunology__tissuetransglutaminase_igg_ttg_igg": false,
+    "immunology__tissuetransglutaminase_igg_ttg_igg": true,
     "immunology__anti_ss_b_la_abs": true,
     "immunology__acer_negundo_t1": true,
     "immunology__house_dust_mix_hx2": true,
@@ -421,6 +421,6 @@
     "immunology__panel_house_dust_allergens_panel": true
   },
   "maintenance_mode": false,
-  "last_updated": "2026-11-18T09:08:40Z",
+  "last_updated": "2026-11-18T09:16:58Z",
   "updated_by": "QC"
 }
